@@ -33,8 +33,6 @@ app.get("/Home", authenticateToken, (req, res) => {
   });
 });
 
-module.exports = app;
-
 // Start the server
 db.sync() // Sync Sequelize models with the database
   .then(() => {
@@ -46,3 +44,5 @@ db.sync() // Sync Sequelize models with the database
   .catch((error) => {
     console.error("Unable to sync database:", error);
   });
+
+module.exports = app;

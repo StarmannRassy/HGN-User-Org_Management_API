@@ -4,49 +4,6 @@ const Organisation = require("../models/organisation"); // Corrected spelling
 const UserOrganisation = require("../models/userOrganisation"); // Assuming this model exists
 const User = require("../models/user");
 
-// Fetch all organisations for the authenticated user
-// const getAllOrganisations = async (req, res) => {
-//   try {
-//     const { userId } = req.body; // Assuming userId is available after authentication
-
-//     // Log the received userId for debugging purposes
-//     console.log("Received userId:", userId);
-
-//     // Fetch the user with the associated organisations
-//     const user = await User.findByPk(userId, {
-//       include: {
-//         model: User.sequelize.models.Organisation,
-//         attributes: ["orgId", "name", "description"], // Use correct attributes from your Organisation table
-//         through: { attributes: [] }, // Exclude through table attributes
-//       },
-//     });
-
-//     if (!user) {
-//       return res.status(404).json({
-//         status: "error",
-//         message: "User not found",
-//       });
-//     }
-
-//     const organisations = user.Organisations; // Extract organisations from the user
-
-//     res.status(200).json({
-//       status: "success",
-//       message: "Organisations fetched successfully",
-//       data: {
-//         organisations,
-//       },
-//     });
-//   } catch (error) {
-//     console.error("Error fetching organisations:", error);
-//     res.status(500).json({
-//       status: "error",
-//       message: "Failed to fetch organisations",
-//       error: error.message,
-//     });
-//   }
-// };
-
 const getAllOrganisations = async (req, res) => {
   try {
     const { userId } = req.body; // Assuming userId is available after authentication

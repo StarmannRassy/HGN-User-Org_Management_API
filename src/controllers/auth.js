@@ -3,8 +3,6 @@
 const { ValidationError } = require("sequelize");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-// const User = require("../models/user");
-// const Organisation = require("../models/organisation");
 const { User, Organisation } = require("../models");
 const { generateToken } = require("../utils/generateToken");
 
@@ -18,9 +16,6 @@ async function register(req, res) {
     if (user) {
       return res.status(400).json({ message: "User already exists" });
     }
-
-    // Hash the password
-    // const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create the user
     user = await User.create({
