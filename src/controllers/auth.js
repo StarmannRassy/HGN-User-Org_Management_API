@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 // const User = require("../models/user");
 // const Organisation = require("../models/organisation");
-const { User, Organisation } = require("../models/index");
+const { User, Organisation } = require("../models");
 const { generateToken } = require("../utils/generateToken");
 
 // Register a new user
